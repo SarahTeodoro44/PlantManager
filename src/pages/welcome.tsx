@@ -10,10 +10,20 @@ import {
 } from 'react-native'; 
 import {Feather} from '@expo/vector-icons';
 import wateringImg from '../assets/watering.png';
-import fonts from '../styles/fonts'
-import colors from '../styles/colors'
+import fonts from '../styles/fonts';
+import colors from '../styles/colors';
+
+import { useNavigation } from '@react-navigation/core';
+
 
 export function Welcome(){  
+
+    const navagation = useNavigation();
+
+    function handleStart(){
+     
+        navagation.navigate('UserIdentification');
+    }
     return (
         <SafeAreaView style={ styles.container}>
             <View style={styles.wrapper}>
@@ -35,7 +45,11 @@ export function Welcome(){
                     Nós cuidamos de lembrar você sempre que precisar. 
                 </Text>
 
-                <TouchableOpacity style={styles.button}  activeOpacity={0.8}>
+                <TouchableOpacity 
+                    style={styles.button} 
+                    activeOpacity={0.8}
+                    onPress= {handleStart}
+                >
                     <Feather name="chevron-right" style={styles.buttonIcon} />
                 </TouchableOpacity>
 
@@ -44,16 +58,19 @@ export function Welcome(){
         </SafeAreaView>
     )
 }
+
 const styles = StyleSheet.create({
     container:{
         flex: 1,
     },
+
     wrapper: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingHorizontal: 20,
     },
+
     title:{
         fontSize: 28,
         fontWeight: 'bold',
@@ -63,6 +80,7 @@ const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         lineHeight: 34,
     },
+
     subtitle:{
         textAlign: 'center',
         fontSize: 18,
@@ -70,9 +88,11 @@ const styles = StyleSheet.create({
         color: colors.heading,
         fontFamily: fonts.text,
     },
+
     image:{
         height: Dimensions.get('window').width * 0.7, 
     },
+
     button:{
         backgroundColor: colors.green,
         justifyContent: 'center', 
@@ -82,9 +102,10 @@ const styles = StyleSheet.create({
         height: 56,
         width: 56,
     },
+    
     buttonIcon:{
         fontSize: 32,
         color: colors.white,
 
-    }
+    },
 });
