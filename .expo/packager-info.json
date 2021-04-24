@@ -1,0 +1,9 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://ae-6c3.anonymous.plantmanager.exp.direct",
+  "packagerNgrokUrl": "https://packager.ae-6c3.anonymous.plantmanager.exp.direct",
+  "ngrokPid": 3028,
+  "webpackServerPort": 19006
+}

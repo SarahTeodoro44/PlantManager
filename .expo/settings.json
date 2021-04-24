@@ -1,0 +1,10 @@
+{
+  "hostType": "lan",
+  "lanType": "ip",
+  "dev": true,
+  "minify": false,
+  "urlRandomness": "ae-6c3",
+  "https": false,
+  "scheme": null,
+  "devClient": false
+}
